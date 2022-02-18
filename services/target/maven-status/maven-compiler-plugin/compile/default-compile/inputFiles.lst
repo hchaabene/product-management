@@ -1,0 +1,7 @@
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/Services/MapperProduct.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/Entity/Products.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/dto/ProductDTO.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/Services/ProductInterface.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/dao/ProductDAO.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/Services/ProdcutServiceRest.java
+/home/habib/product-management/services/src/main/java/org/exoplatform/training/Services/ProdcutService.java

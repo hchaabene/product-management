@@ -1,0 +1,8 @@
+org/exoplatform/training/Services/MapperProduct.class
+exo-jpa-entities/entities.idx
+org/exoplatform/training/Entity/Products.class
+org/exoplatform/training/Services/ProductInterface.class
+org/exoplatform/training/Services/ProdcutService.class
+org/exoplatform/training/dao/ProductDAO.class
+org/exoplatform/training/Services/ProdcutServiceRest.class
+org/exoplatform/training/dto/ProductDTO.class

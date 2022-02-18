@@ -1,0 +1,240 @@
+<webapp-structure>
+  <registeredFiles>
+    <entry>
+      <string>currentBuild</string>
+      <path-set>
+        <pathsSet class="linked-hash-set">
+          <string>vue-app/main.js</string>
+          <string>vue-app/components/app.vue</string>
+          <string>css/main.less</string>
+          <string>index.html</string>
+          <string>META-INF/exo-conf/configuration.xml</string>
+          <string>WEB-INF/gatein-resources.xml</string>
+          <string>WEB-INF/conf/custom-vuetify-extension/portal/portal/intranet/navigation.xml</string>
+          <string>WEB-INF/conf/custom-vuetify-extension/portal/portal/intranet/pages.xml</string>
+          <string>WEB-INF/conf/custom-vuetify-extension/bundle-configuration.xml</string>
+          <string>WEB-INF/conf/custom-vuetify-extension/portal-configuration.xml</string>
+          <string>WEB-INF/conf/configuration.xml</string>
+          <string>WEB-INF/portlet.xml</string>
+          <string>WEB-INF/web.xml</string>
+          <string>WEB-INF/classes/locale/addon/VuetifySample_en.properties</string>
+          <string>WEB-INF/lib/jsr250-api-1.0.jar</string>
+          <string>WEB-INF/lib/json-20070829.jar</string>
+        </pathsSet>
+      </path-set>
+    </entry>
+  </registeredFiles>
+  <dependenciesInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.0.1</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>13</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source>
+            <modelId>org.example:vuetify-webpack-sample:1.0-SNAPSHOT</modelId>
+            <location>/home/habib/product-management/webapps/pom.xml</location>
+          </source>
+        </location>
+        <groupIdLocation>
+          <lineNumber>14</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>15</lineNumber>
+          <columnNumber>19</columnNumber>
+          <source reference="../../location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>17</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../location/source"/>
+        </versionLocation>
+        <scopeLocation>
+          <lineNumber>16</lineNumber>
+          <columnNumber>14</columnNumber>
+          <source reference="../../location/source"/>
+        </scopeLocation>
+        <managementKey>javax.servlet:javax.servlet-api:jar</managementKey>
+      </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>jsr250-api</artifactId>
+        <version>1.0</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>19</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </location>
+        <groupIdLocation>
+          <lineNumber>20</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>21</lineNumber>
+          <columnNumber>19</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>22</lineNumber>
+          <columnNumber>22</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </versionLocation>
+        <managementKey>javax.annotation:jsr250-api:jar</managementKey>
+      </dependency>
+      <targetFileName>jsr250-api-1.0.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>javax.ws.rs</groupId>
+        <artifactId>jsr311-api</artifactId>
+        <version>1.1.1</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>24</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </location>
+        <groupIdLocation>
+          <lineNumber>25</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>26</lineNumber>
+          <columnNumber>19</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>28</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </versionLocation>
+        <scopeLocation>
+          <lineNumber>27</lineNumber>
+          <columnNumber>14</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </scopeLocation>
+        <managementKey>javax.ws.rs:jsr311-api:jar</managementKey>
+      </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.exoplatform.ws</groupId>
+        <artifactId>exo.ws.rest.core</artifactId>
+        <version>6.3.x-SNAPSHOT</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>30</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </location>
+        <groupIdLocation>
+          <lineNumber>31</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>32</lineNumber>
+          <columnNumber>19</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>34</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </versionLocation>
+        <scopeLocation>
+          <lineNumber>33</lineNumber>
+          <columnNumber>14</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </scopeLocation>
+        <managementKey>org.exoplatform.ws:exo.ws.rest.core:jar</managementKey>
+      </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.exoplatform.core</groupId>
+        <artifactId>exo.core.component.security.core</artifactId>
+        <version>6.3.x-SNAPSHOT</version>
+        <type>jar</type>
+        <scope>provided</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>36</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </location>
+        <groupIdLocation>
+          <lineNumber>37</lineNumber>
+          <columnNumber>16</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>38</lineNumber>
+          <columnNumber>19</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>40</lineNumber>
+          <columnNumber>17</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </versionLocation>
+        <scopeLocation>
+          <lineNumber>39</lineNumber>
+          <columnNumber>14</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </scopeLocation>
+        <managementKey>org.exoplatform.core:exo.core.component.security.core:jar</managementKey>
+      </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20070829</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <location>
+          <lineNumber>42</lineNumber>
+          <columnNumber>23</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </location>
+        <groupIdLocation>
+          <lineNumber>43</lineNumber>
+          <columnNumber>18</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </groupIdLocation>
+        <artifactIdLocation>
+          <lineNumber>44</lineNumber>
+          <columnNumber>21</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </artifactIdLocation>
+        <versionLocation>
+          <lineNumber>45</lineNumber>
+          <columnNumber>18</columnNumber>
+          <source reference="../../../../org.apache.maven.plugin.war.util.DependencyInfo/dependency/location/source"/>
+        </versionLocation>
+        <managementKey>org.json:json:jar</managementKey>
+      </dependency>
+      <targetFileName>json-20070829.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+  </dependenciesInfo>
+</webapp-structure>
