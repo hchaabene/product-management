@@ -32,6 +32,16 @@ public class ProdcutService  implements ProductInterface{
         }
         return res;
   }
+
+  @Override
+  public void deleteProduct(long id) {
+    Products prod = this.productdao.find(id);
+        try {
+            this.productdao.delete(prod);
+        }catch (Exception e) {
+            log.error("Cannot delete the Product", e);
+        }
+  }
   
    
 }

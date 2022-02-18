@@ -26,68 +26,67 @@
           </span>
         </template>
         <template slot="content">
-          content 
-        </template>
-      </exo-drawer>
-      <v-form>
-        <v-container>
-          <v-row>
-            <v-col
-              cols="6"
-              md="4"
-            >
-              <v-text-field
-                v-model="name"
-                :rules="nameRules"
+          <v-form ref="form" @submit.prevent >
+            <v-container>
+              <v-row>
+                <v-col
+                  cols="6" 
+                
+                  md="12"
+                >
+                  <v-text-field
+                    v-model="name"
+                    :rules="nameRules"
                
-                label="name product"
-                required
-              ></v-text-field>
-            </v-col>
+                    label="name product"
+                    required
+                  ></v-text-field>
+                </v-col>
 
-            <v-col cols="6">
-              <v-textarea
-                v-model="description"
-                color="teal"
-              >
-                <template v-slot:label>
-                  <div>
-                    Bio <small>(optional)</small>
-                  </div>
-                </template>
-              </v-textarea>
-            </v-col>
+                <v-col cols="6" md="12">
+                  <v-textarea
+                    v-model="description"
+                    color="teal"
+                  >
+                    <template v-slot:label>
+                      <div>
+                        Bio <small>(optional)</small>
+                      </div>
+                    </template>
+                  </v-textarea>
+                </v-col>
         
          
-          </v-row>
-          <v-row>
-            <v-col cols="1">
-              <v-text-field
-                v-model="price"
-                label="Price"
-                prefix="DT"
+              </v-row>
+              <v-row>
+                <v-col cols="1" md="12">
+                  <v-text-field
+                    v-model="price"
+                    label="Price"
+                    prefix="DT"
 
-              ></v-text-field>
+                  ></v-text-field>
               
-            </v-col>
-            <v-col cols="6">
-              <v-file-input
-                v-model="image"
-                counter
-                show-size
-                truncate-length="15"
-              ></v-file-input>
-            </v-col>
-          </v-row>
-          <div
-            @click="checkForm()"
-          >Envoyer</div>
-        </v-container>
-      </v-form>
-  
+                </v-col>
+                <v-col cols="6" md="12">
+                  <v-file-input
+                    v-model="image"
+                    counter
+                    show-size
+                    truncate-length="15"
+                  ></v-file-input>
+                </v-col>
+              </v-row>
+              <div
+                @click="submit"
+              >Envoyer</div>
+            </v-container>
+          </v-form>
+        </template>
+      </exo-drawer>
       <v-row>
         <v-col
-          v-for="item in items['product']"
+          v-for="item in items"
           :key="item.id"
         >
           <v-card 
@@ -104,7 +103,7 @@
             </v-list-item>
     
             <v-img
-              :src="item.image"
+              :src="'https://www.akamai.com/content/dam/site/im-demo/'+ item.img"
               height="194"/>
     
             <v-card-text >
@@ -148,8 +147,9 @@
               </v-dialog>
               <v-btn
                 text
-                color="deep-purple accent-4">
-                Bookmark
+                color="deep-purple accent-4"
+                @click="deleteProduct(item.id)" >
+                Delete 
               </v-btn>
               <div class="flex-grow-1"></div>
               <v-btn icon>
@@ -184,44 +184,60 @@ export default {
       isAdded : null
     };
   },
-  computed: {
-    kudosReceiver () {
-      return {
-        receiverId: this.kudosToSend && this.kudosToSend.id,
-        avatar: this.kudosToSend && this.kudosToSend.avatar,
-        profileUrl: this.kudosToSend && this.kudosToSend.profileUrl,
-        fullName: this.kudosToSend && this.kudosToSend.receiverFullName
-      };
-    }
-  },
-  
+  computed: {},
   mounted () {
     axios
       .get('http://localhost:8080/portal/rest/v1/products')
       .then(response => {
         this.items = response.data;
+        console.log(this.items);
       });
     this.$refs.testDrawer.drawer = false ; 
   },
   methods:{
+
+    deleteProduct(id){
+      axios.post(`http://localhost:8080/portal/rest/v1/products/deleteProduct/${id}`)
+        .then(res => {
+          console.log(res);
+          axios
+            .get('http://localhost:8080/portal/rest/v1/products')
+            .then(response => {
+              this.items = response.data;
+              console.log(this.items);
+            });
+        }); 
+    },
     details(item)
     {
       this.datas = item ; 
     },
-    checkForm() {
-      const product  = {
-        id : 1 , 
-        name: this.name , 
-        price : this.price , 
-        description : this.description , 
-        image : 'https://www.rungisinternational.com/wp-content/uploads/2018/09/figues_fraiches-778x778.jpg'
-      };
-      axios.post('http://localhost:8080/portal/rest/v1/products', product)
-        .then(response => this.isAdded = response.data);
-    },
     open()
     {
       this.$refs.testDrawer.open();
+    },
+    refresh(){
+      axios
+        .get('http://localhost:8080/portal/rest/v1/products')
+        .then(response => {
+          this.items = response.data;
+          console.log(this.items);
+        });
+      this.$refs.testDrawer.drawer = false  ; 
+      this.$refs.form.reset();
+    },
+    submit(){
+      const product  = {
+        name: this.name , 
+        price : this.price , 
+        description : this.description , 
+        img : 'perceptual-standard.jpg'
+      };
+      axios.post('http://localhost:8080/portal/rest/v1/products', product)
+        .then(response => {
+          this.items = response.data ; 
+          this.refresh();
+        }); 
     }
   }
 };

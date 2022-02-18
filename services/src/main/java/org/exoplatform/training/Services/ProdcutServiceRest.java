@@ -69,4 +69,16 @@ public class ProdcutServiceRest  implements ResourceContainer {
    
   }
 
+  @POST
+  @Path("/deleteProduct/{id}")
+  public Response deleteProduct(@PathParam("id") String id){
+      try {
+        productService.deleteProduct(Long.parseLong(id));
+      } catch (Exception e) {
+          log.error(e.getMessage());
+          return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                  .entity("An internal error has occurred when trying to delete the products").build();
+      }
+      return Response.ok(MediaType.APPLICATION_JSON).build();
+  }
 }
