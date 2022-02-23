@@ -6,17 +6,13 @@
         <key>org.exoplatform.training.Services.ProdcutServiceRest</key>
         <type>org.exoplatform.training.Services.ProdcutServiceRest</type>
     </component>
-<!--<component>
-    <key>org.exoplatform.training.Services.ProdcutServiceRest</key>
-    <type>org.exoplatform.training.Services.ProdcutServiceRest</type>
-  </component>
-  <component>
-    <type>org.exoplatform.training.dao.ProductDAO</type>
-  </component>
-  <component>
-    <key>org.exoplatform.training.services.ProductInterface</key>
-    <type>org.exoplatform.training.services.ProdcutService</type>
-  </component> -->
+    <component>
+        <key>org.exoplatform.training.plugins.ProductPluginInterface</key>
+        <type>org.exoplatform.training.plugins.ProductServiceImpl</type>
+    </component>
+    <component>
+        <type>org.exoplatform.training.plugins.StartableProductService</type>
+    </component>
   <external-component-plugins>
         <target-component>org.exoplatform.commons.api.persistence.DataInitializer</target-component>
         <component-plugin>
@@ -32,4 +28,15 @@
             </init-params>
         </component-plugin>
     </external-component-plugins>
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.training.plugins.ProductPluginInterface</target-component>
+        <component-plugin>
+            <name>UpperCase plugin</name>
+            <set-method>addPlugins</set-method>
+            <type>org.exoplatform.training.plugins.UpperCasePlugin</type>
+        </component-plugin>
+    </external-component-plugins>
+
+
 </configuration>

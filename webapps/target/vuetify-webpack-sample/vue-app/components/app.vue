@@ -147,8 +147,9 @@
               </v-dialog>
               <v-btn
                 text
-                color="deep-purple accent-4">
-                Bookmark
+                color="deep-purple accent-4"
+                @click="deleteProduct(item.id)" >
+                Delete 
               </v-btn>
               <div class="flex-grow-1"></div>
               <v-btn icon>
@@ -194,6 +195,19 @@ export default {
     this.$refs.testDrawer.drawer = false ; 
   },
   methods:{
+
+    deleteProduct(id){
+      axios.post(`http://localhost:8080/portal/rest/v1/products/deleteProduct/${id}`)
+        .then(res => {
+          console.log(res);
+          axios
+            .get('http://localhost:8080/portal/rest/v1/products')
+            .then(response => {
+              this.items = response.data;
+              console.log(this.items);
+            });
+        }); 
+    },
     details(item)
     {
       this.datas = item ; 
