@@ -67,7 +67,7 @@
 
       <external-component-plugins>
         <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
-        <component-plugin>
+          <component-plugin>
             <name>QuotePrinterJob</name>
             <set-method>addPeriodJob</set-method>
             <type>org.exoplatform.services.scheduler.PeriodJob</type>
@@ -80,12 +80,30 @@
                     <property name="groupName" value="QuotePrinters"/>
                     <property name="job" value="org.exoplatform.training.job.addPeriodJobProduct"/>
                     <property name="repeatCount" value="0"/>
-                    <property name="period" value="${exo.training.job.period:30000}"/><!-- default 30 seconds -->
-                    <property name="startTime" value="+15000"/><!-- start after 15 seconds delay -->
+                    <property name="period" value="${exo.training.job.period:30000}"/>
+                    <property name="startTime" value="+15000"/>
                     <property name="endTime" value=""/>
                 </properties-param>
             </init-params>
-        </component-plugin>
+          </component-plugin>
+          <component-plugin>
+              <name>CronJob Plugin</name>
+              <set-method>addCronJob</set-method>
+              <type>org.exoplatform.services.scheduler.CronJob</type>
+              <description>cron job configuration</description>
+              <init-params>
+                  <properties-param>
+                      <name>cronjob.info</name>
+                      <description>dumb job executed by cron expression</description>
+                      <property name="jobName" value="DumbJob"/>
+                      <property name="groupName" value="DumbJobGroup"/>
+                      <property name="job" value="org.exoplatform.training.job.addPeriodJobProduct"/>
+                      <!-- The job will be performed at 10:15am every day -->
+                      <property name="expression" value="* * * * * ?"/>
+                  </properties-param>
+              </init-params>
+          </component-plugin>
+
     </external-component-plugins>
 </configuration>
 
