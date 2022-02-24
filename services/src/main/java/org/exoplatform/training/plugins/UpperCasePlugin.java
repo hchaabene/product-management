@@ -7,4 +7,9 @@ public class UpperCasePlugin extends textUpperCasePlugin {
     return text.toUpperCase();
   }
 
+  @Override
+  public String beautifyText(String text) {
+    return "\n" + text + "\n";
+  }
+
 }

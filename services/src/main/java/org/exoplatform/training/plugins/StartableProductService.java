@@ -4,9 +4,6 @@ import org.picocontainer.Startable;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class StartableProductService  implements   Startable{
   private static final Log LOG     = ExoLogger.getLogger(StartableProductService.class);
   ProductPluginInterface productService ;

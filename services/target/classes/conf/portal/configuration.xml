@@ -2,6 +2,15 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
                xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd" 
                xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+    <component>
+        <key>org.exoplatform.training.Services.ProductInterface</key>
+        <type>org.exoplatform.training.Services.ProdcutService</type>
+    </component>
+    <component>
+        <type>org.exoplatform.training.dao.ProductDAO</type>
+    </component>
+
     <component>
         <key>org.exoplatform.training.Services.ProdcutServiceRest</key>
         <type>org.exoplatform.training.Services.ProdcutServiceRest</type>
@@ -38,5 +47,45 @@
         </component-plugin>
     </external-component-plugins>
 
+    <external-component-plugins>
+        <target-component>org.exo.training.TextService</target-component>
+        <component-plugin>
+            <name>beautify plugin</name>
+            <set-method>addTextPlugin</set-method>
+            <type>org.exoplatform.training.plugins.BeautifyProduct</type>
+        </component-plugin>
+    </external-component-plugins>
 
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.listener.ListenerService</target-component>
+        <component-plugin>
+            <name>product-added-success</name>
+            <set-method>addListener</set-method>
+            <type>org.exoplatform.training.listeners.ProductListeners</type>
+        </component-plugin>
+    </external-component-plugins>
+
+      <external-component-plugins>
+        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
+        <component-plugin>
+            <name>QuotePrinterJob</name>
+            <set-method>addPeriodJob</set-method>
+            <type>org.exoplatform.services.scheduler.PeriodJob</type>
+            <description>Job to print random quotes</description>
+            <init-params>
+                <properties-param>
+                    <name>job.info</name>
+                    <description>details of the execution of the Quotes printer job</description>
+                    <property name="jobName" value="QuotePrinter"/>
+                    <property name="groupName" value="QuotePrinters"/>
+                    <property name="job" value="org.exoplatform.training.job.addPeriodJobProduct"/>
+                    <property name="repeatCount" value="0"/>
+                    <property name="period" value="${exo.training.job.period:30000}"/><!-- default 30 seconds -->
+                    <property name="startTime" value="+15000"/><!-- start after 15 seconds delay -->
+                    <property name="endTime" value=""/>
+                </properties-param>
+            </init-params>
+        </component-plugin>
+    </external-component-plugins>
 </configuration>
+
