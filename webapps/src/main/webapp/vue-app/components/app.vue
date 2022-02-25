@@ -190,7 +190,6 @@ export default {
       .get('http://localhost:8080/portal/rest/v1/products')
       .then(response => {
         this.items = response.data;
-        console.log(this.items);
       });
     this.$refs.testDrawer.drawer = false ; 
   },
@@ -199,12 +198,11 @@ export default {
     deleteProduct(id){
       axios.post(`http://localhost:8080/portal/rest/v1/products/deleteProduct/${id}`)
         .then(res => {
-          console.log(res);
+          this.items = res ; 
           axios
             .get('http://localhost:8080/portal/rest/v1/products')
             .then(response => {
               this.items = response.data;
-              console.log(this.items);
             });
         }); 
     },
@@ -221,7 +219,6 @@ export default {
         .get('http://localhost:8080/portal/rest/v1/products')
         .then(response => {
           this.items = response.data;
-          console.log(this.items);
         });
       this.$refs.testDrawer.drawer = false  ; 
       this.$refs.form.reset();

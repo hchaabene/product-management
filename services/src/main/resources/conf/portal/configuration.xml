@@ -86,7 +86,7 @@
                 </properties-param>
             </init-params>
           </component-plugin>
-          <component-plugin>
+         <!-- <component-plugin>
               <name>CronJob Plugin</name>
               <set-method>addCronJob</set-method>
               <type>org.exoplatform.services.scheduler.CronJob</type>
@@ -98,11 +98,11 @@
                       <property name="jobName" value="DumbJob"/>
                       <property name="groupName" value="DumbJobGroup"/>
                       <property name="job" value="org.exoplatform.training.job.addPeriodJobProduct"/>
-                      <!-- The job will be performed at 10:15am every day -->
-                      <property name="expression" value="* * * * * ?"/>
+                      &lt;!&ndash; The job will be performed at 10:15am every day &ndash;&gt;
+                      <property name="expression" value="* * * 2 5 ?"/>
                   </properties-param>
               </init-params>
-          </component-plugin>
+          </component-plugin>-->
 
     </external-component-plugins>
 </configuration>
