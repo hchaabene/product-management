@@ -7,5 +7,5 @@ new Vue({
 extensionRegistry.registerComponent('ActivityFooter','activity-footer-action',{
   id:'Relikes',
   vueComponent: Vue.options.components['activity-like-action'],
-  rank:20,
+  rank:80,
 });

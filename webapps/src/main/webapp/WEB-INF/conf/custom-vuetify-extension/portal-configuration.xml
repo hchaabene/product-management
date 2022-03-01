@@ -24,7 +24,7 @@
               <boolean>true</boolean>
             </field>
             <field name="importMode">
-              <string>insert</string>
+              <string>merge</string>
             </field>
             <field name="predefinedOwner">
               <collection type="java.util.HashSet">
