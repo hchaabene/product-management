@@ -20,6 +20,39 @@
 
     <dependencies>
         <!-- Import versions from platform project -->
+        
+        <!-- Import versions from platform project -->
+            <dependency>
+            <groupId>org.exoplatform</groupId>
+            <artifactId>maven-depmgt-pom</artifactId>
+            <version>16.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social</artifactId>
+            <version>6.2.4</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- Our own project modules -->
+      <!--   <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social-notification-addon-webapp</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social-notification-addon-lib</artifactId>
+            <version>${project.version}</version>
+        </dependency>-->
+        <!-- To be replaced by an import of GateIn Portal parent POM -->
+        <dependency>
+            <groupId>org.gatein.portal</groupId>
+            <artifactId>exo.portal.component.portal</artifactId>
+            <version>3.5.10.Final</version>
+        </dependency>
         <dependency>
             <groupId>org.exoplatform.social</groupId>
             <artifactId>social</artifactId>
@@ -53,7 +86,6 @@
             <artifactId>jsr311-api</artifactId>
             <scope>provided</scope>
             <version>1.1.1</version>
-
         </dependency>
         <dependency>
             <groupId>org.exoplatform.ws</groupId>
@@ -72,20 +104,35 @@
             <artifactId>json</artifactId>
             <version>20070829</version>
         </dependency>
-
         <dependency>
             <groupId>org.exoplatform.commons</groupId>
             <artifactId>commons-api</artifactId>
             <version>${org.exoplatform.social.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>training-service-w8</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
-
+        <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social-component-core</artifactId>
+            <scope>provided</scope>
+            <version>${org.exoplatform.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.core</groupId>
+            <artifactId>exo.core.component.organization.api</artifactId>
+            <scope>provided</scope>
+            <version>${org.exoplatform.social.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.social</groupId>
+            <artifactId>social-component-common</artifactId>
+            <scope>provided</scope>
+            <version>${org.exoplatform.social.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
